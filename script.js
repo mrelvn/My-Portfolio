@@ -13,7 +13,17 @@ window.addEventListener("DOMContentLoaded", () => {
 let popup = document.getElementById("popup");
 
 function openPopup() {
+  const name = document.querySelector('input[type="text"]').value.trim();
+  const email = document.querySelector('input[type="email"]').value.trim();
+  const message = document.querySelector('textarea').value.trim();
+
+  if (name === "" || email === "" || message === "") {
+    alert("Please fill all fields!");
+    return false;
+  }
+
   popup.classList.add("open-popup");
+  return false;
 }
 
 function closePopup() {
